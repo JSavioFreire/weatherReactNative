@@ -1,35 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+import Icon from 'react-native-vector-icons/Feather';
+
 import HomePage from './pages/home/homePage';
 
-
 export default function App() {
-  const Tab = createMaterialBottomTabNavigator();
+  const Tab = createBottomTabNavigator();
+
   return (
     <NavigationContainer>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <Tab.Navigator
         initialRouteName='Home'
-        activeColor="#e91e63"
-        barStyle={{ backgroundColor: 'tomato' }}
         screenOptions={{
-          headerShown: false,
-          tabBarShowLabel: true,
-          tabBarStyle: { backgroundColor: '#5B8C2A' },
-          tabBarInactiveTintColor: "#A9A9A9",
-          tabBarInactiveBackgroundColor: '',
-          tabBarActiveTintColor: "white",
-          tabBarActiveBackgroundColor: '#5B8C29',
+          headerTitleStyle:{fontWeight:'bold', color:'white', },
+          headerStyle: { backgroundColor: '#7888FF'},
+          tabBarActiveTintColor: 'white',
+          tabBarInactiveTintColor: 'white',
+          tabBarStyle: { height: 60, backgroundColor: '#4A68FF', }
         }}>
-        <Tab.Screen name="Home" component={HomePage} Options={{
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
-          ),
-        }} />
+
+        <Tab.Screen name="Clima proximo da sua região"
+          component={HomePage}
+          options={{
+            tabBarLabel: "Agora",
+            tabBarLabelStyle: { fontSize: 18 },
+            tabBarIcon: ({ color, size }) =>
+              (<Icon name="sun" color={color} size={size} />)
+          }} />
+
         <Tab.Screen name="Feed" component={HomePage} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
+

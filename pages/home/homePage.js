@@ -1,10 +1,17 @@
-import { View, Text } from "react-native"
-import { styleHome } from "./StyleHomePage";
+import { View, ActivityIndicator } from "react-native"
+import LoadingCenter from "../../components/loading/LoadingCenter";
+import WeatherIcon from "../../components/weatherIcon/weatherIcon";
+import { useFetch } from "../../hooks/fetch";
+import { currentWeatherUrl } from "../../urls/urls";
 
 const HomePage = () => {
+
+    const { data } = useFetch(currentWeatherUrl);
+    
     return (
-        <View style={styleHome.container}>
-            <Text>Olá, </Text>
+        <View>
+            {data ? <WeatherIcon url={data['weather'][0]['icon']}/> : <LoadingCenter/>}
+
         </View>
     )
 }
