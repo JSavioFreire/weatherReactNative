@@ -3,8 +3,6 @@ import { StyleSheet } from "react-native";
 export const StyleWI = StyleSheet.create({
     container: {
         alignItems: "center",
-        marginTop: 50
-
     },
     icon: {
         width: 180,
