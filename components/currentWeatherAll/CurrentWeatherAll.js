@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import WeatherIcon from "../../components/weatherIcon/weatherIcon";
 import { StyleCWA } from './styleCWA';
-import { convertToCelsius } from '../../convertToCelsius/ConvertToCelsius'
+import { convertToCelsius } from '../../function/ConvertToCelsius'
 
 const CurrentWeatherAll = (data) => {
 
