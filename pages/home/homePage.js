@@ -3,12 +3,13 @@ import CurrentWeatherAll from "../../components/currentWeatherAll/CurrentWeather
 import LoadingCenter from "../../components/loading/LoadingCenter";
 import { useFetch } from "../../hooks/fetch";
 import { currentWeatherUrl } from "../../urls/urls";
+import { styleHome } from "./StyleHomePage";
 
 const HomePage = () => {
 
     const { data } = useFetch(currentWeatherUrl);
     return (
-        <View>
+        <View style={styleHome.container}>
             {data ? <CurrentWeatherAll data = {data} /> : <LoadingCenter />}
 
         </View>

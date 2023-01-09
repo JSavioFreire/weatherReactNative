@@ -19,15 +19,9 @@ const CurrentWeatherAll = (data) => {
                     <Text>Temperatura atual: </Text>
                     <Text style={StyleCWA.temp}>{currentTemp.toFixed(1)}°C</Text>
                 </View>
-                <View >
-                    <View style={StyleCWA.currentTemp}>
-                        <Text>Temperatura Máxima</Text>
 
-                    </View>
-                    <View style={StyleCWA.currentTemp}>
-                        <Text>Temperatura Minima</Text>
-                    </View>
-                </View>
+
+               
             </View>
         </View>
     )
