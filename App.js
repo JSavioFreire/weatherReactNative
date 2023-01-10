@@ -8,12 +8,9 @@ import Icon from 'react-native-vector-icons/Feather';
 import { CurrentWeatherContextProvider } from './context/currentWeatherContext';
 
 import HomePage from './pages/home/homePage';
-import NextPage from './pages/next/NextPage';
 
 export default function App() {
   const Tab = createBottomTabNavigator();
-
-
 
   return (
     <CurrentWeatherContextProvider>
@@ -28,7 +25,6 @@ export default function App() {
             tabBarInactiveTintColor: 'white',
             tabBarStyle: { height: 60, backgroundColor: '#4A68FF', }
           }}>
-
           <Tab.Screen name="Clima proximo da sua região"
             component={HomePage}
             options={{
@@ -37,16 +33,6 @@ export default function App() {
               tabBarIcon: ({ color, size }) =>
                 (<Icon name="sun" color={color} size={size} />)
             }} />
-
-          <Tab.Screen name="Previsão para as próximas horas"
-            component={NextPage}
-            options={{
-              tabBarLabel: "Previsão",
-              tabBarLabelStyle: { fontSize: 18 },
-              tabBarIcon: ({ color, size }) =>
-                (<Icon name="sun" color={color} size={size} />)
-            }}
-          />
         </Tab.Navigator>
       </NavigationContainer>
     </CurrentWeatherContextProvider>
